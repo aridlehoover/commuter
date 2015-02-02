@@ -1,6 +1,13 @@
 class Station
   def self.all
-    stations = HTTParty.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V')
+    stations = HTTParty.get("http://api.bart.gov/api/stn.aspx?cmd=stns&key=#{ENV['BART_API_KEY']}")
     stations['root']['stations']['station']
+  end
+
+  def self.find station
+    station = HTTParty.get("http://api.bart.gov/api/etd.aspx?cmd=etd&orig=#{station}&key=#{ENV['BART_API_KEY']}")
+    return nil if station['root']['message']
+
+    station['root']['station']
   end
 end
