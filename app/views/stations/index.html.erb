@@ -1,0 +1,5 @@
+<ul id="stations">
+  <% @stations.each do |station| %>
+    <li><%= station['abbr'] + ' - ' + station['name'] %></li>
+  <% end %>
+</ul>
