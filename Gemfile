@@ -14,7 +14,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
+group :test do
   gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
+group :development, :test do
   gem 'pry'
 end
