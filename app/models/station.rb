@@ -4,10 +4,9 @@ class Station
     stations['root']['stations']['station']
   end
 
-  def self.find station
-    station = HTTParty.get("http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=#{station}&key=#{ENV['BART_API_KEY']}")
+  def self.find station_abbr
+    station = HTTParty.get("http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=#{station_abbr}&key=#{ENV['BART_API_KEY']}")
     return nil if station['root']['message']
-
-    station['root']['station']
+    station['root']['stations']['station']
   end
 end
