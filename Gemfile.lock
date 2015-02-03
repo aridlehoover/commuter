@@ -55,6 +55,9 @@ GEM
       rails (>= 3, < 5)
     database_cleaner (1.4.0)
     diff-lcs (1.2.5)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     gherkin (2.12.2)
@@ -165,6 +168,7 @@ DEPENDENCIES
   capybara
   cucumber-rails
   database_cleaner
+  dotenv-rails
   httparty
   jbuilder (~> 1.2)
   jquery-rails

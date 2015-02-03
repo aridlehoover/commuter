@@ -58,6 +58,11 @@ describe StationsController do
         get :show, id: station_abbr
         expect(response).to redirect_to('/stations')
       end
+
+      it 'sets the flash error' do
+        get :show, id: station_abbr
+        expect(flash[:error]).to be_present
+      end
     end
   end
 end

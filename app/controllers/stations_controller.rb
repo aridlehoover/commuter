@@ -5,7 +5,6 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find params[:id]
-    redirect_to stations_path unless @station
-    # need flash message re: station not found
+    redirect_to stations_path, flash: {error: "Station not found"} unless @station
   end
 end

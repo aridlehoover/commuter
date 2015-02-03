@@ -28,7 +28,7 @@ describe Station do
 
       before do
         expect(HTTParty).to receive(:get)
-          .with("http://api.bart.gov/api/etd.aspx?cmd=etd&orig=#{station_abbr}&key=MW9S-E7SL-26DU-VV8V")
+          .with("http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=#{station_abbr}&key=#{ENV['BART_API_KEY']}")
           .and_return({'root' => {'station' => {'abbr' => station_abbr, 'name' => station_name}}})
       end
 
@@ -38,7 +38,6 @@ describe Station do
 
       it 'returns station information' do
         station = Station.find station_abbr
-
         expect(station).to eq({'abbr' => station_abbr, 'name' => station_name})
       end
     end
@@ -48,13 +47,12 @@ describe Station do
 
       before do
         expect(HTTParty).to receive(:get)
-          .with("http://api.bart.gov/api/etd.aspx?cmd=etd&orig=#{station_abbr}&key=MW9S-E7SL-26DU-VV8V")
+          .with("http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=#{station_abbr}&key=#{ENV['BART_API_KEY']}")
           .and_return({'root' => {'message' => {'error' => {'text' => 'Invalid orig'}}}})
       end
 
       it 'should return nil' do
         station = Station.find station_abbr
-
         expect(station).to be_nil
       end
     end
