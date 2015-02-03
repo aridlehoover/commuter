@@ -3,10 +3,11 @@ Feature:
   As a passenger
   I want to see station information
 
-  Scenario: All stations
+  Scenario: Station List
     Given I request a list of stations
     Then I see a list of stations
 
-  Scenario: One station
-    Given I request station information for "PHIL"
+  Scenario: Station Information
+    Given I request a list of stations
+    When I request station information for "PHIL"
     Then I see station information for "PHIL"

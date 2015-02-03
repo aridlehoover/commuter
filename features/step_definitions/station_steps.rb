@@ -7,8 +7,8 @@ Then(/^I see a list of stations$/) do
   expect(list_items.length).to eq(45)
 end
 
-Given(/^I request station information for "(.*?)"$/) do |station_abbr|
-  visit "/stations/#{station_abbr}"
+When(/^I request station information for "(.*?)"$/) do |station_abbr|
+  page.find("##{station_abbr}").click
 end
 
 Then(/^I see station information for "(.*?)"$/) do |station_abbr|

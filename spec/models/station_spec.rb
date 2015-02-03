@@ -29,7 +29,7 @@ describe Station do
       before do
         expect(HTTParty).to receive(:get)
           .with("http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=#{station_abbr}&key=#{ENV['BART_API_KEY']}")
-          .and_return({'root' => {'station' => {'abbr' => station_abbr, 'name' => station_name}}})
+          .and_return({'root' => {'stations' => {'station' => {'abbr' => station_abbr, 'name' => station_name}}}})
       end
 
       it 'calls the correct BART API' do
