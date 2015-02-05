@@ -1,44 +1,24 @@
 require 'rails_helper'
 
-describe StationsController do
+describe DeparturesController do
   let(:stations) { [{'abbr' => '12TH'}, {'abbr' => '16TH'}] }
-
-  describe '#index' do
-    before do
-      expect(Station).to receive(:all).and_return(stations)
-    end
-
-    it 'gets stations from Station.all' do
-      get :index
-    end
-
-    it "assigns @stations" do
-      get :index
-      expect(assigns(:stations)).to eq(stations)
-    end
-
-    it 'renders the index template' do
-      get :index
-      expect(response).to render_template('index')
-    end
-  end
 
   describe '#show' do
     context 'when station is found' do
-      let(:station) { stations[0] }
+      let(:departures) { double('departures') }
       let(:station_abbr) { '12TH' }
 
       before do
-        expect(Station).to receive(:find).with(station_abbr).and_return(station)
+        expect(Departure).to receive(:find).with(station_abbr).and_return(departures)
       end
 
-      it 'gets station info from Station.find' do
+      it 'gets departure information from Departure.find' do
         get :show, id: station_abbr
       end
 
       it 'assigns @station' do
         get :show, id: station_abbr
-        expect(assigns(:station)).to eq(station)
+        expect(assigns(:station)).to eq(departures)
       end
 
       it 'renders the show template' do
@@ -51,7 +31,7 @@ describe StationsController do
       let(:station_abbr) { 'NOTFOUND' }
 
       before do
-        expect(Station).to receive(:find).with(station_abbr).and_return(nil)
+        expect(Departure).to receive(:find).with(station_abbr).and_return(nil)
       end
 
       it 'redirects to stations#index' do

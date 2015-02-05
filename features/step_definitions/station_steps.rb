@@ -1,4 +1,4 @@
-Given(/^I request a list of stations$/) do
+When(/^I request a list of stations$/) do
   visit '/stations'
 end
 
@@ -8,7 +8,7 @@ Then(/^I see a list of stations$/) do
 end
 
 When(/^I request station information for "(.*?)"$/) do |station_abbr|
-  page.find("##{station_abbr}").click
+  visit "/stations/#{station_abbr}"
 end
 
 Then(/^I see station information for "(.*?)"$/) do |station_abbr|

@@ -1,0 +1,14 @@
+<h1><%= @station['name'] + '(' + @station['abbr'] + ')'%></h1>
+
+<% @station['etd'].each do |departure| %>
+  <h2><%= departure['destination'] %></h2>
+  <ul>
+    <% if departure['estimate'].count == 7 %>
+      <li>A <%= departure['estimate']['length'] %> car train departs in <%= departure['estimate']['minutes'] %> minutes.</li>
+    <% else %>
+      <% departure['estimate'].each do |estimate| %>
+        <li>A <%= estimate['length'] %> car train departs in <%= estimate['minutes'] %> minutes.</li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
