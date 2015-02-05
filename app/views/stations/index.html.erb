@@ -1,9 +1,4 @@
 <h1>BART Stations</h1>
 <ul id="stations">
-  <% @stations.each do |station| %>
-    <li>
-      <%= link_to "#{station['abbr']}", departure_path(station['abbr']), id: station['abbr'] %>
-      <%= " - #{station['name']}"%>
-    </li>
-  <% end %>
+  <%= render partial: "station", collection: @stations %>
 </ul>
