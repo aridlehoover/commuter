@@ -2,30 +2,23 @@ require 'rails_helper'
 
 describe DeparturesController do
   describe '#show' do
-    context 'when station is found' do
-      let(:station) { { "name" => name, "abbr" => abbr} }
-      let(:name) { "Pittsburg/Bay Point"}
+    context 'when departures is found' do
+      let(:departures) { { "name" => name, "abbr" => abbr, "destinations" => [] } }
+      let(:name) { "Pittsburg/Bay Point" }
       let(:abbr) { 'PITT' }
-      let(:serialized_station) {
-        {
-          "name" => name,
-          "abbr" => abbr,
-          "destinations" => []
-        }
-      }
+      let(:serialized_departures) { { name: name, abbr: abbr, destinations: [] } }
 
       before do
-        expect(DepartureSerializer).to receive(:new).with(station).and_return(serialized_station)
-        expect(Departure).to receive(:find).with(abbr).and_return(station)
+        expect(Departure).to receive(:find).with(abbr).and_return(departures)
       end
 
       it 'gets departure information from Departure.find' do
         get :show, id: abbr
       end
 
-      it 'assigns @station' do
+      it 'assigns @departures' do
         get :show, id: abbr
-        expect(assigns(:station)).to eq(serialized_station)
+        expect(assigns(:departures)).to eq(serialized_departures)
       end
 
       it 'renders the show template' do
@@ -34,7 +27,7 @@ describe DeparturesController do
       end
     end
 
-    context 'when station not found' do
+    context 'when departures not found' do
       let(:abbr) { 'NOTFOUND' }
 
       before do
