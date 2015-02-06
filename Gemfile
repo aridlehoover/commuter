@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'httparty'
-gem 'rails_12factor'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -27,4 +26,9 @@ end
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
+  gem 'pry-byebug'
+end
+
+group :production, :qa, :staging do
+  gem 'rails_12factor'
 end

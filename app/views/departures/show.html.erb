@@ -1,12 +1,8 @@
-<h1><%= @station['name'] + '(' + @station['abbr'] + ')'%></h1>
+<h1><%= "#{@station[:name]} (#{@station[:abbr]})" %></h1>
 
-<% @station['etd'].each do |departure| %>
-  <h2><%= departure['destination'] %></h2>
+<% @station[:destinations].each do |destination| %>
+  <h1><%= "#{destination[:name]} (#{destination[:abbr]})" %></h1>
   <ul>
-    <% if departure['estimate'].count == 7 %>
-      <li>A <%= departure['estimate']['length'] %> car train departs in <%= departure['estimate']['minutes'] %> minutes.</li>
-    <% else %>
-      <%= render partial: 'estimate', collection: departure['estimate'] %>
-    <% end %>
+    <%= render partial: 'estimate', collection: destination[:estimates] %>
   </ul>
 <% end %>
