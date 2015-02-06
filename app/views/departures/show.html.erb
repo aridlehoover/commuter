@@ -1,7 +1,7 @@
 <h1><%= "#{@departures[:name]} (#{@departures[:abbr]})" %></h1>
 
 <% @departures[:destinations].each do |destination| %>
-  <h1><%= "#{destination[:name]} (#{destination[:abbr]})" %></h1>
+  <h2><%= "#{destination[:name]} (#{destination[:abbr]})" %></h2>
   <ul>
     <%= render partial: 'estimate', collection: destination[:estimates] %>
   </ul>
