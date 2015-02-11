@@ -1,6 +1,8 @@
 # Commuter
 
-[![Code Climate](https://codeclimate.com/github/aridlehoover/commuter/badges/gpa.svg)](https://codeclimate.com/github/aridlehoover/commuter)
+[![quality](https://codeclimate.com/github/aridlehoover/commuter/badges/gpa.svg)](https://codeclimate.com/github/aridlehoover/commuter)
+[![coverage](https://codeclimate.com/github/aridlehoover/commuter/badges/coverage.svg)](https://codeclimate.com/github/aridlehoover/commuter)
+[![build](https://circleci.com/gh/aridlehoover/commuter.svg?style=svg)](https://circleci.com/gh/aridlehoover/commuter)
 
 Commuter is a simple application to help me catch BART trains. Yes, there are
 a million of these apps out there. Many much more sophisticated than this one.
