@@ -1,0 +1,13 @@
+.destination {
+  position: relative;
+
+  input[type='checkbox'] {
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
