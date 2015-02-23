@@ -1,4 +1,4 @@
-class DepartureSerializer
+class StationSerializer
   attr_reader :bart_etd
 
   def initialize(bart_etd)

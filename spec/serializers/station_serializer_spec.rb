@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe DepartureSerializer do
-  let(:serializer) { DepartureSerializer.new(response) }
+describe StationSerializer do
+  let(:serializer) { StationSerializer.new(response) }
   let(:response) {
     {
       "name" => name,
@@ -38,7 +38,7 @@ describe DepartureSerializer do
 
   context "when the input is nil" do
     it "returns nil" do
-      expect(DepartureSerializer.new(nil).as_json).to be_nil
+      expect(StationSerializer.new(nil).as_json).to be_nil
     end
   end
 

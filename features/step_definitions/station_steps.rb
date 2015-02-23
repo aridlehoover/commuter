@@ -13,7 +13,7 @@ Then(/^I see station information for "(.*?)"$/) do |station_abbr|
 end
 
 When(/^I request a list of departures for "(.*?)"$/) do |station_abbr|
-  page.find("a[href='/departures/#{station_abbr}']").click
+  page.find("a[href='/stations/#{station_abbr}']").click
 end
 
 Then(/^I should see the list of departures$/) do
