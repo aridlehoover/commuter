@@ -1,12 +1,14 @@
 Feature:
   So I may plan my trip
   As a passenger
-  I want to see station information
+  I want to see station and departure information
+
+  Background:
+    Given I request a list of stations
 
   Scenario: Station List
-    When I request a list of stations
     Then I see a list of stations
 
-  Scenario: Station Information
-    When I request station information for "PHIL"
-    Then I see station information for "PHIL"
+  Scenario: Station Departures
+    When I request a list of departures for "EMBR"
+    Then I should see the list of departures

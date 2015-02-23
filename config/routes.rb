@@ -1,6 +1,6 @@
 Commuter::Application.routes.draw do
   root 'stations#index'
-  resources :stations, only: [:index, :show]
+  resources :stations, only: :index
   resources :departures, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
