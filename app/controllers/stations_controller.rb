@@ -1,6 +1,8 @@
 class StationsController < ApplicationController
   def index
     @stations = Station.all
+    render nothing: true, status: :not_found unless @stations
+    render json: @stations, status: :ok
   end
 
   def show
