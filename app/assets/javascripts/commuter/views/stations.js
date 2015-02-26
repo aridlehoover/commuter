@@ -1,5 +1,5 @@
 Commuter.Views.Stations = Backbone.View.extend({
-  template: 'stations',
+  template: 'commuter/templates/stations',
   el: '#commuter',
 
   initialize: function() {
