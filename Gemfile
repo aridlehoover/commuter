@@ -12,18 +12,18 @@ gem 'backbone-rails'
 gem 'hogan_assets'
 gem 'httparty'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'codeclimate-test-reporter', require: nil
-end
-
-group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-byebug'
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :production do
