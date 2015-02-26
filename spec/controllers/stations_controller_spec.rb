@@ -17,9 +17,9 @@ describe StationsController do
       expect(assigns(:stations)).to eq(stations)
     end
 
-    it 'renders the index template' do
+    it 'renders JSON' do
       get :index
-      expect(response).to render_template('index')
+      expect(JSON.parse(response.body)).to eq(stations)
     end
   end
 
