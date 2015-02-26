@@ -1,6 +1,7 @@
 Commuter = {
-  Models: {},
   Collections: {},
+  Models: {},
+  Presenters: {},
   Views: {}
 }
 

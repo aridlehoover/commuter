@@ -7,6 +7,11 @@ Commuter.Views.Stations = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(HoganTemplates[this.template].render(this.collection))
+    var presenter = new Commuter.Presenters.Collection({
+      collection: this.collection,
+      modelPresenter: Commuter.Presenters.Station
+    })
+
+    this.$el.html(HoganTemplates[this.template].render(presenter))
   }
 });
