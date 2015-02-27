@@ -14,6 +14,7 @@ gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'jasmine'
   gem 'cucumber-rails', require: false
   gem 'capybara'
   gem 'selenium-webdriver'
