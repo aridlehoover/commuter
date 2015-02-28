@@ -6,6 +6,6 @@ Commuter.Presenters.Collection = function(options) {
 
 Commuter.Presenters.Collection.prototype.models = function(){
   return _.map(this.collection.models, function(model) {
-    return new this.modelPresenter({model: model});
+    return new this.modelPresenter({ model: model });
   }.bind(this));
 }
