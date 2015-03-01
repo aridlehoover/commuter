@@ -1,0 +1,13 @@
+<h1>{{name}} ({{abbr}})</h1>
+<ul class="destinations no-bullets">
+  {{#destinations}}
+    <li class="destination">
+      <h2 class="inline inner-bottom">{{name}} ({{abbr}})</h2>
+      <ul class="departures inner-botom">
+        {{#departures}}
+          <li class="departure">A {{length}} car train departs in {{minutes}} minutes.</li>
+        {{/departures}}
+      </ul>
+    </li>
+  {{/destinations}}
+</ul>

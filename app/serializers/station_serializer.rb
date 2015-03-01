@@ -30,20 +30,20 @@ class StationSerializer
     {
       name: dest["destination"],
       abbr: dest["abbreviation"],
-      estimates: estimates(dest)
+      departures: departures(dest)
     }
   end
 
-  def estimates(dest)
+  def departures(dest)
     return [] unless dest["estimate"]
-    return [ estimate(dest["estimate"]) ] unless dest["estimate"].kind_of?(Array)
+    return [ departure(dest["estimate"]) ] unless dest["estimate"].kind_of?(Array)
 
-    estimates = []
-    dest["estimate"].each { |e| estimates << estimate(e) }
-    estimates
+    departures = []
+    dest["estimate"].each { |e| departures << departure(e) }
+    departures
   end
 
-  def estimate(est)
+  def departure(est)
     {
       minutes: est["minutes"],
       length: est["length"]

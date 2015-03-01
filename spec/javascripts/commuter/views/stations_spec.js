@@ -36,7 +36,7 @@ describe('Commuter.Views.Stations', function() {
       });
     });
 
-    it('renders the right template', function() {
+    it('renders the station template', function() {
       spyOn(HoganTemplates['commuter/templates/stations'], 'render');
       view.render();
       expect(HoganTemplates['commuter/templates/stations'].render).toHaveBeenCalled();

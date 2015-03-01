@@ -25,4 +25,24 @@ describe('Commuter.Router', function() {
       expect(Commuter.Collections.Stations.prototype.fetch).toHaveBeenCalled();
     });
   });
+
+  describe('showStation', function() {
+    it('creates the right model', function() {
+      spyOn(Commuter.Models.Station.prototype, 'initialize').and.callThrough();
+      router.showStation();
+      expect(Commuter.Models.Station.prototype.initialize).toHaveBeenCalled();
+    });
+
+    it('creates the right view', function() {
+      spyOn(Commuter.Views.Station.prototype, 'initialize').and.callThrough();
+      router.showStation();
+      expect(Commuter.Views.Station.prototype.initialize).toHaveBeenCalled();
+    });
+
+    it('fetches the model', function() {
+      spyOn(Commuter.Models.Station.prototype, 'fetch')
+      router.showStation();
+      expect(Commuter.Models.Station.prototype.fetch).toHaveBeenCalled();
+    });
+  });
 });

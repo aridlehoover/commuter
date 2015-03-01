@@ -15,11 +15,16 @@ Then(/^I see station information for "(.*?)"$/) do |station_abbr|
 end
 
 When(/^I request a list of departures for "(.*?)"$/) do |station_abbr|
-  page.find("a[href='/stations/#{station_abbr}']").click
+  within('#commuter ul') do
+    page.find("a[href='##{station_abbr}']").click
+  end
+end
+
+Then(/^I should see "(.*?)" station$/) do |station_name|
+  expect(page).to have_content(station_name)
 end
 
 Then(/^I should see the list of departures$/) do
   expect(page).to have_content('Pittsburg/Bay Point')
-  expect(page).to have_content('Dublin/Pleasanton')
   expect(page).to have_content('Daly City')
 end

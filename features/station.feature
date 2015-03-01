@@ -11,4 +11,5 @@ Feature:
 
   Scenario: Station Departures
     When I request a list of departures for "EMBR"
-    Then I should see the list of departures
+    Then I should see "Embarcadero" station
+    And I should see the list of departures

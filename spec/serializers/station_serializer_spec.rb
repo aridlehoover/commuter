@@ -75,30 +75,30 @@ describe StationSerializer do
       expect(@json[:destinations].count).to eq(2)
     end
 
-    context "when there are no estimates" do
-      let(:estimates) { nil }
+    context "when there are no departures" do
+      let(:departures) { nil }
 
       it "returns an empty array" do
-        expect(@json[:destinations][0][:estimates].kind_of?(Array)).to eq(true)
-        expect(@json[:destinations][0][:estimates].count).to eq(0)
+        expect(@json[:destinations][0][:departures].kind_of?(Array)).to eq(true)
+        expect(@json[:destinations][0][:departures].count).to eq(0)
       end
     end
 
-    context "when there is one estimate" do
+    context "when there is one departure" do
       let(:estimates) { estimate }
 
       it "returns an array with all of the destinations" do
-        expect(@json[:destinations][0][:estimates].kind_of?(Array)).to eq(true)
-        expect(@json[:destinations][0][:estimates].count).to eq(1)
+        expect(@json[:destinations][0][:departures].kind_of?(Array)).to eq(true)
+        expect(@json[:destinations][0][:departures].count).to eq(1)
       end
     end
 
-    context "when there are multiple estimates" do
+    context "when there are multiple departures" do
       let(:estimates) { [ estimate, estimate ] }
 
       it "returns an array with all of the destinations" do
-        expect(@json[:destinations][0][:estimates].kind_of?(Array)).to eq(true)
-        expect(@json[:destinations][0][:estimates].count).to eq(2)
+        expect(@json[:destinations][0][:departures].kind_of?(Array)).to eq(true)
+        expect(@json[:destinations][0][:departures].count).to eq(2)
       end
     end
   end

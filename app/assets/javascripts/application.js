@@ -18,6 +18,7 @@
 //= require commuter/app
 //= require_tree ./commuter/models
 //= require_tree ./commuter/collections
+//= require commuter/presenters/model
 //= require_tree ./commuter/presenters
 //= require_tree ./commuter/views
 //= require_tree ./commuter/templates

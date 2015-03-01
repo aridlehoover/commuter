@@ -43,13 +43,13 @@ describe StationsController do
         expect(assigns(:station)).to eq(serialized_departures)
       end
 
-      it 'renders the show template' do
+      it 'renders JSON' do
         get :show, id: abbr
-        expect(response).to render_template('show')
+        expect(JSON.parse(response.body)).to eq(station)
       end
     end
 
-    context 'when departures not found' do
+    context 'when station not found' do
       let(:abbr) { 'NOTFOUND' }
 
       before do
