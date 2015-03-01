@@ -1,4 +1,4 @@
-describe('Commuter.Presenters.Station', function() {
+describe('Commuter.Presenters.Destination', function() {
   var presenter, model;
 
   beforeEach(function() {
@@ -6,10 +6,10 @@ describe('Commuter.Presenters.Station', function() {
       id: 1,
       abbr: 'PHIL',
       name: 'Pleasant Hill / Contra Costa Center',
-      destinations: [ { abbr: 'DALY', name: 'Daly City', estimates: [] } ]
+      departures: [ { length: 10, minutes: 20 } ]
     });
 
-    presenter = new Commuter.Presenters.Station({model: model});
+    presenter = new Commuter.Presenters.Destination({model: model});
   });
 
   describe('abbr', function() {
@@ -24,10 +24,10 @@ describe('Commuter.Presenters.Station', function() {
     });
   });
 
-  describe('destinations', function() {
-    it('returns an array of destination presenters', function() {
-      expect(presenter.destinations()[0]).toEqual(
-        jasmine.any(Commuter.Presenters.Destination)
+  describe('departures', function() {
+    it('returns an array of departure presenters', function() {
+      expect(presenter.departures()[0]).toEqual(
+        jasmine.any(Commuter.Presenters.Departure)
       );
     });
   });

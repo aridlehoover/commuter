@@ -19,6 +19,13 @@ describe('Commuter.Presenters.Collection', function() {
   describe('models', function() {
     it('presents each model', function() {
       presentedModels = presenter.models();
+      expect(presentedModels[0]).toEqual(jasmine.any(TestPresenter));
+      expect(presentedModels[1]).toEqual(jasmine.any(TestPresenter));
+      expect(presentedModels[2]).toEqual(jasmine.any(TestPresenter));
+    });
+
+    it('allows presenter methods to run', function() {
+      presentedModels = presenter.models();
       expect(presentedModels[0].squared()).toEqual(1);
       expect(presentedModels[1].squared()).toEqual(4);
       expect(presentedModels[2].squared()).toEqual(9);
