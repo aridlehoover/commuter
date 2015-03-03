@@ -5,9 +5,8 @@ Commuter.Router = Backbone.Router.extend({
   },
 
   showStations: function() {
-    var collection = new Commuter.Collections.Stations();
-    var view = new Commuter.Views.Stations({ collection: collection });
-    collection.fetch();
+    var view = new Commuter.Views.Stations({ collection: window.stations });
+    view.render();
   },
 
   showStation: function(abbr) {

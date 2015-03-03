@@ -16,5 +16,10 @@
   <% end %>
 
   <%= yield %>
+
+  <script>
+    var stations = new Backbone.Collection;
+    stations.reset(<%= @stations.to_json.html_safe %>);
+  </script>
 </body>
 </html>
