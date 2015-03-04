@@ -1,4 +1,7 @@
 Commuter = {
+  App: {
+    Repository: {}
+  },
   Collections: {},
   Models: {},
   Presenters: {},

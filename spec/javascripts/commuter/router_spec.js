@@ -2,17 +2,16 @@ describe('Commuter.Router', function() {
   var router, collection;
 
   beforeEach(function() {
+    Commuter.App = {
+      Repository: {
+        stations = new Commuter.Collections.Stations();
+      }
+    }
+
     router = new Commuter.Router();
-    collection = new Commuter.Collections.Stations();
   });
 
   describe('showStations', function() {
-    it('creates the right collection', function() {
-      spyOn(Commuter.Collections.Stations.prototype, 'initialize').and.callThrough();
-      router.showStations();
-      expect(Commuter.Collections.Stations.prototype.initialize).toHaveBeenCalled();
-    });
-
     it('creates the right view', function() {
       spyOn(Commuter.Views.Stations.prototype, 'initialize').and.callThrough();
       router.showStations();
