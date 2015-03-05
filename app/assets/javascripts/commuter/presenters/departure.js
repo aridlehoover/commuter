@@ -4,9 +4,21 @@ Commuter.Presenters.Departure = function(options) {
 };
 
 Commuter.Presenters.Departure.prototype.length = function() {
-  return this.model.get('length');
+  var length = this.model.get('length');
+  if(length = 8) {
+    return 'An ' + length + ' car train';
+  } else {
+    return 'A ' + length + ' car train';
+  }
 };
 
 Commuter.Presenters.Departure.prototype.minutes = function() {
-  return this.model.get('minutes');
+  var minutes = this.model.get('minutes');
+  if(minutes == 'Leaving') {
+    return 'now';
+  } else if(minutes == '1') {
+    return 'in ' + minutes + ' minute';
+  } else {
+    return 'in ' + minutes + ' minutes';
+  }
 };
