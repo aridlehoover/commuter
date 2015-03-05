@@ -1,4 +1,7 @@
-Commuter.Presenters.Destination = _.extend(Commuter.Presenters.Model, {});
+Commuter.Presenters.Destination = function(options) {
+  var options = options ? options : {};
+  this.model = options.model;
+}
 
 Commuter.Presenters.Destination.prototype.abbr = function() {
   return this.model.get('abbr');
