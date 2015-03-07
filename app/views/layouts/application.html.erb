@@ -18,8 +18,8 @@
   <%= yield %>
 
   <script>
-    Commuter.App.Repository.stations = new Backbone.Collection();
-    Commuter.App.Repository.stations.reset(<%= @stations.to_json.html_safe %>);
+    Commuter.Repository.stations = new Backbone.Collection();
+    Commuter.Repository.stations.reset(<%= @stations.to_json.html_safe %>);
   </script>
 </body>
 </html>

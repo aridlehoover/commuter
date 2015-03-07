@@ -5,7 +5,7 @@ Commuter.Presenters.Departure = function(options) {
 
 Commuter.Presenters.Departure.prototype.length = function() {
   var length = this.model.get('length');
-  if(length = 8) {
+  if(length == 8) {
     return 'An ' + length + ' car train';
   } else {
     return 'A ' + length + ' car train';

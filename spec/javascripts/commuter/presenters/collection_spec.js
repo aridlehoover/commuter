@@ -1,4 +1,7 @@
-TestPresenter = _.extend(Commuter.Presenters.Model, {});
+TestPresenter = function(options) {
+  var options = options ? options : {};
+  this.model = options.model;
+}
 
 TestPresenter.prototype.squared = function() {
   return this.model.id * this.model.id

@@ -1,12 +1,10 @@
 Commuter = {
-  App: {
-    Repository: {}
-  },
   Collections: {},
   Models: {},
   Presenters: {},
+  Repository: {},
   Views: {}
-}
+};
 
 $(document).ready(function() {
   this.router = new Commuter.Router();
