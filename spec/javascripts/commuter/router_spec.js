@@ -2,10 +2,8 @@ describe('Commuter.Router', function() {
   var router, collection;
 
   beforeEach(function() {
-    Commuter = {
-      Repository: {
-        stations: new Commuter.Collections.Stations()
-      }
+    Commuter.Repository = {
+      stations: new Commuter.Collections.Stations()
     }
 
     router = new Commuter.Router();

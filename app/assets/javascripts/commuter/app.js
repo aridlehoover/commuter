@@ -1,8 +1,8 @@
 Commuter = {
+  Repository: {},
   Collections: {},
   Models: {},
   Presenters: {},
-  Repository: {},
   Views: {}
 };
 
