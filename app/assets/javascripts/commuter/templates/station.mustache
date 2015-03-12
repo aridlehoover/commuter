@@ -1,13 +1,6 @@
 <h1>{{name}} ({{abbr}})</h1>
 <ul class="destinations no-bullets">
   {{#destinations}}
-    <li class="destination">
-      <h2 class="inline">{{name}} ({{abbr}})</h2>
-      <ul class="departures inner-bottom">
-        {{#departures}}
-          <li class="departure">{{length}} departs {{minutes}}.</li>
-        {{/departures}}
-      </ul>
-    </li>
+    {{> destination}}
   {{/destinations}}
 </ul>

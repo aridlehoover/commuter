@@ -11,6 +11,11 @@ Commuter.Views.Station = Backbone.View.extend({
       model: this.model
     })
 
-    this.$el.html(HoganTemplates[this.template].render(presenter))
+    this.$el.html(
+      HoganTemplates[this.template].render(presenter, {
+        'destination': HoganTemplates['commuter/templates/_destination'],
+        'departure': HoganTemplates['commuter/templates/_departure']
+      })
+    );
   }
 });
