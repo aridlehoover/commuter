@@ -1,0 +1,14 @@
+# encoding: utf-8
+
+site 'http://community.opscode.com/api/v1'
+
+ENV["RUBY_CONFIGURE_OPTS"] = "--disable-install-doc"
+
+cookbook "apt"
+cookbook "postgresql", {}
+cookbook "ruby_build", {:github=>"fnichol/chef-ruby_build", :ref=>"v0.8.0"}
+cookbook "rbenv", {:github=>"chef-rbenv/ruby_rbenv", :ref=>"v0.8.1"}
+cookbook "git", {}
+cookbook "vim", {}
+cookbook "bashrc", {}
+cookbook "bash-completion", {}
