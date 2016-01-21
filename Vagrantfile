@@ -20,8 +20,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = ["cookbooks"]
     chef.add_recipe :apt
     chef.add_recipe 'postgresql::server'
+    chef.add_recipe 'postgresql::setup_users'
     chef.add_recipe 'ruby_build'
-    chef.add_recipe 'rbenv::user'
+    chef.add_recipe 'ruby_rbenv::user'
     chef.add_recipe 'git'
     chef.add_recipe 'vim'
     chef.json = {
@@ -55,25 +56,40 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ],
         :password => {
           :postgres => "password"
-        }
+        },
+        :users => [
+          {
+            :username    => "vagrant",
+            :superuser   => true,
+            :replication => false,
+            :createdb    => true,
+            :createrole  => false,
+            :login       => true
+          }
+        ]
       },
       :rbenv => {
         :user_installs => [
           {
             :user   => "vagrant",
-            :rubies => ["2.3.0"],
+            :rubies => [
+              {
+                :name => "2.3.0",
+                :environment => { 'RUBY_CONFIGURE_OPTS' => '--disable-install-doc' }
+              }
+            ],
             :global => "2.3.0",
             :gems   => {
               "2.3.0" => [
                 { "name" => "bundler" }
               ]
-            }
-          }
-        ],
-        :plugins => [
-          {
-            :name    => "rbenv-rehash",
-            :git_url => "git://github.com/rbenv/rbenv-gem-rehash.git"
+            },
+            :plugins => [
+              {
+                :name    => "rbenv-rehash",
+                :git_url => "git://github.com/rbenv/rbenv-gem-rehash.git"
+              }
+            ]
           }
         ]
       },

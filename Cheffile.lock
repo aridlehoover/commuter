@@ -5,6 +5,8 @@ SITE
     build-essential (2.2.4)
     chef-sugar (3.3.0)
     chef_handler (1.2.0)
+    database (4.0.9)
+      postgresql (>= 1.0.0)
     dmg (2.3.0)
     git (4.3.5)
       build-essential (>= 0.0.0)
@@ -17,6 +19,9 @@ SITE
       apt (>= 1.9.0)
       build-essential (>= 0.0.0)
       openssl (~> 4.0)
+    ruby_build (0.8.0)
+    ruby_rbenv (1.0.1)
+      ruby_build (>= 0.0.0)
     vim (2.0.0)
     windows (1.39.1)
       chef_handler (>= 0.0.0)
@@ -25,24 +30,18 @@ SITE
       yum (~> 3.2)
 
 GIT
-  remote: https://github.com/chef-rbenv/ruby_rbenv
-  ref: v0.8.1
-  sha: 7641701406bed1ffbe11b6500284a1d9e2ccc792
+  remote: https://github.com/phlipper/chef-postgresql.git
+  ref: master
+  sha: df0423d11db9f4cf1c66ae6d94bcde86ab32f30a
   specs:
-    rbenv (0.8.1)
-
-GIT
-  remote: https://github.com/fnichol/chef-ruby_build
-  ref: v0.8.0
-  sha: ed2d3841784ecf60c1de808946307b588efe644f
-  specs:
-    ruby_build (0.8.0)
+    chef-postgresql (0.16.1)
+      apt (>= 2.6.1)
 
 DEPENDENCIES
   apt (>= 0)
+  chef-postgresql (>= 0)
+  database (>= 0)
   git (>= 0)
-  postgresql (>= 0)
-  rbenv (>= 0)
-  ruby_build (>= 0)
+  ruby_rbenv (>= 0)
   vim (>= 0)
 

@@ -13,7 +13,7 @@ development:
   encoding: unicode
   database: commuter_development
   pool: 5
-  username: alan
+  username: vagrant
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -24,8 +24,8 @@ test: &test
   encoding: unicode
   database: commuter_test
   pool: 5
-  username: alan
-  password:
+  username: vagrant
+  password: 
 
 production:
   adapter: postgresql

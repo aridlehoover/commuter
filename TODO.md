@@ -6,7 +6,6 @@
 
 ## Operating System
 - [x] Install Ubuntu Trusty 64
-- [ ] Configure system user
 - [ ] Configure bash profile (prompt, aliases, etc.)
 
 ## Tools
@@ -15,10 +14,10 @@
 
 ## Ruby
 - [x] Install rbenv & ruby_build
-- [ ] Install Ruby 2.3.0 reliably (ENV["RUBY_CONFIGURE_OPTS"] = "--disable-install-doc")
-- [ ] Install rbenv-rehash plugin
-- [ ] Install bundler gem
+- [x] Install Ruby 2.3.0 reliably (ENV["RUBY_CONFIGURE_OPTS"] = "--disable-install-doc")
+- [x] Install rbenv-rehash plugin
+- [x] Install bundler gem
 
 ## PostgreSQL
 - [x] Install PostgreSQL
-- [ ] Configure roles
+- [x] Configure roles
